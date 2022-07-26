@@ -1,0 +1,26 @@
+<div class="card">
+    <ul class="list-group list-group-flush">
+        {% if categories.count %}
+        <div style="font-weight: bold" class="card-header">Categories</div>
+        {% endif %}
+        {% for cat in categories %}
+        {% if num != 0 %}
+        <a href="{% url 'product_by_category' cat %}" class="list-group-item">{{cat|capfirst}}</a>
+        {% endif %}
+        {% endfor %}
+
+        <form class="mt-3 p-3" action="{% url 'home' %}" method="post" name="filter">
+            {% csrf_token %}
+            <p>Filter:</p>
+            <div class="form-check">
+                <input class="form-check-input" name="by_price" type="checkbox" value="price" id="price">
+                <label class="form-check-label" for="price">
+                    Sort by Price
+                </label>
+            </div>
+            
+            <div class="mb-4"></div>
+            <input type="submit" class="btn btn-success btn-sm" value="Filter">
+        </form>
+    </ul>
+</div>

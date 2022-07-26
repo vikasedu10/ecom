@@ -1,0 +1,52 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Payment Success
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="border-1 col-md-3 order-md-1 mb-2 my-5">
+            {% include 'shop/sidepan.html' %}
+        </div>
+        <div class="col-md-9 order-md-2 p-0">
+            <strong><p style="color: green;">Your payment has been received & order has been placed! Thankyou for shopping.</p></strong>
+            <hr>
+            <div class="col-md-5">
+                <p>Detail Message</p>
+                <div class="alert alert-success">
+                    <strong>Success!</strong>
+                </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Order ID</th>
+                        <th scope="col">Order Name</th>
+                        <th scope="col">Order Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>004</td>
+                        <td>SXFP-CHYK-ONI6-S89U</td>
+                        <td>25/07/2022</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <a href="{% url 'home' %}" class="btn btn-warning btn-sm">Back to Home</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

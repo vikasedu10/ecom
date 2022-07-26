@@ -1,0 +1,53 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+
+{% block title %}
+eCom
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="border-1 col-md-3 order-md-1 mb-2 my-5">
+            {% include 'shop/sidepan.html' %}
+        </div>
+        <div class="col-md-9 order-md-2">
+            <p>Product Description. Click below to add the product to cart.</p>
+            <a href="{% url 'add_to_cart' product.id %}" type="button" class="btn btn-success btn-sm">Add to cart</a>
+            <hr>
+              
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a>Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'home' %}">Pruducts</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{ product.name|truncatechars:30 }}</li>
+                </ol>
+              </nav>
+
+            <div class="col-lg-8 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{{ product.product_image.url}}" class="card-img-top" alt="image" style="height: 400px; object-fit: cover">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <strong class="col-2" style="color: red;">{{ product.price }} Rs.</strong>
+                            <a href="#" style="text-decoration: none" class="card-title">{{ product.name }}</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                    <p><strong>Category</strong>: {{ product.category }}</p>
+                    </div>
+                    <div class="card-body">
+                        {{ product.description }} 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+* {
+    fontSize: "18px",
+}
+
+footer {
+    /* position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px; */
+}
+
+.fa-shopping-cart:hover {
+    border: 12px solid black,
+}
